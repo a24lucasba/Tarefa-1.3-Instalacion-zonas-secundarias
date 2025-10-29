@@ -19,6 +19,17 @@ services:
       rededns:
           ipv4_address: 192.168.20.10
     dns: 192.168.20.100
+  dnsserver2:
+    build: dnsserver2
+    hostname: darthsidious
+    depends_on:
+      - dnsserver
+    networks:
+      rededns:
+        ipv4_address: 192.168.20.11
+    volumes:
+      - ./dnsserver2/conf/named.conf.options:/etc/bind/named.conf.options
+      - ./dnsserver2/conf/named.conf.local:/etc/bind/named.conf.local
 networks:
   rededns:
     ipam:

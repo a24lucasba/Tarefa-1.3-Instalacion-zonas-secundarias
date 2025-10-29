@@ -1,0 +1,10 @@
+zone "starwars.lan" IN {
+    type slave;
+    file "/etc/bind/db.starwars.lan";
+    masters {192.168.20.100};
+};
+zone "20.168.192.in-addr.arpa" {
+    type slave;
+    file "/etc/bind/db.20.168.192";
+    masters {192.168.20.100};
+};

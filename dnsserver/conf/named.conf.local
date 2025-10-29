@@ -1,8 +1,12 @@
 zone "starwars.lan" IN {
     type master;
     file "/etc/bind/db.starwars.lan";
+    allow-transfer {192.168.20.11};
+    notify yes;
 };
 zone "20.168.192.in-addr.arpa" {
     type master;
     file "/etc/bind/db.20.168.192";
+    allow-transfer {192.168.20.11};
+    notify yes;
 };
