@@ -5,7 +5,7 @@ options {
         8.8.8.8;
     };
 
-	dnssec-validation no;
+	dnssec-validation yes;
 
 	listen-on-v6 { none; };
 };
